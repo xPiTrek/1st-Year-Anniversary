@@ -246,20 +246,21 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+            transform: translateY(0);
+            transition: background 0.4s ease;
         }
 
         .photo-item:hover .photo-caption {
-            transform: translateY(0);
+            background: linear-gradient(to top, rgba(255, 107, 157, 0.9), rgba(255, 107, 157, 0.6));
         }
 
         .photo-caption p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-style: italic;
             color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         /* Lightbox */
@@ -443,7 +444,7 @@
                 <h2 class="chapter-title">Chapter 1: Where It All Began</h2>
                 <p class="chapter-date">August - September 2024</p>
                 <div class="chapter-description">
-                    <p>It all started at a Yankees game on August 23rd, 2024. I saw you for the first time, and little did I know that asking for a portable charger would change my life forever. These are the moments where our story began.</p>
+                    <p>It all started at a Yankees game on August 23rd, 2024. I saw you for the first time, and little did I know that asking for a portable charger would change my life forever. From that first meeting to our unforgettable drive-in movie date, these are the moments where our story began.</p>
                 </div>
             </div>
             <div class="photo-gallery">
@@ -453,6 +454,11 @@
                         <p>How you looked the first time I saw you, August 23rd 2024</p>
                     </div>
                 </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-02.jpg">
+                    <img src="photos/image-02.jpg" alt="Drive-in movie date">
+                    <div class="photo-caption">
+                        <p>Drive-in movie date, September 20th 2024</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -676,6 +682,13 @@
             <div style="margin: 60px 0;">
                 <h3 style="text-align: center; font-size: 2rem; color: #fbbf24; margin-bottom: 30px;">☀️ Summer 2025</h3>
                 <div class="photo-gallery">
+                    <div class="photo-item" data-type="video" data-src="photos/video-03.mp4">
+                        <video src="photos/video-03.mp4" muted></video>
+                        <div class="video-indicator"></div>
+                        <div class="photo-caption">
+                            <p>Pittsburgh Pirates fireworks night, June 20th 2025</p>
+                        </div>
+                    </div>
                     <div class="photo-item" data-type="image" data-src="photos/image-29.jpg">
                         <img src="photos/image-29.jpg" alt="July 4th">
                         <div class="photo-caption">
@@ -736,13 +749,13 @@
             <!-- Fall 2025 -->
             <div style="margin: 60px 0;">
                 <h3 style="text-align: center; font-size: 2rem; color: #fb923c; margin-bottom: 30px;">🍂 Fall 2025</h3>
-                 <div class="photo-gallery">
+                <div class="photo-gallery">
                     <div class="photo-item" data-type="image" data-src="photos/image-39.jpg">
                         <img src="photos/image-39.jpg" alt="Dominican Republic">
                         <div class="photo-caption">
                             <p>Dominican Republic trip, October 4th 2025</p>
                         </div>
-                     </div>
+                        </div>
                     </div>
                     <div class="photo-item" data-type="image" data-src="photos/image-40.jpg">
                         <img src="photos/image-40.jpg" alt="Dominican Republic">
