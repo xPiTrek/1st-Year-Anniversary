@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story - One Year Anniversary ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ff6b9d 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-100px) translateX(50px); }
+            50% { transform: translateY(-50px) translateX(-50px); }
+            75% { transform: translateY(-120px) translateX(30px); }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 107, 157, 0.3), transparent),
+                        radial-gradient(circle at 70% 50%, rgba(118, 75, 162, 0.3), transparent);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(20px); }
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        /* Album Container */
+        .album-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Chapter Section */
+        .chapter {
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .chapter-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b9d, transparent);
+            margin: 20px auto;
+        }
+
+        .chapter-title {
+            font-size: 2.5rem;
+            color: #ff6b9d;
+            margin-bottom: 10px;
+        }
+
+        .chapter-date {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        .chapter-description {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        /* Photo Gallery Grid */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.4);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+
+        .photo-item img,
+        .photo-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-item:hover img,
+        .photo-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .video-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 157, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .video-indicator::after {
+            content: '▶';
+            color: white;
+            font-size: 2rem;
+            margin-left: 5px;
+        }
+
+        .photo-item:hover .video-indicator {
+            background: rgba(255, 107, 157, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+        }
+
+        .photo-caption p {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #fff;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-content img,
+        .lightbox-content video {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(255, 107, 157, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(255, 107, 157, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 107, 157, 0.6);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(255, 107, 157, 0.3);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 107, 157, 0.6);
+        }
+
+        .lightbox-nav.prev {
+            left: 40px;
+        }
+
+        .lightbox-nav.next {
+            right: 40px;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-style: italic;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        /* Special Sections */
+        .mets-section {
+            background: linear-gradient(135deg, rgba(0, 45, 98, 0.3), rgba(252, 76, 2, 0.3));
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .mets-section .chapter-title {
+            color: #FC4C02;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .chapter-title {
+                font-size: 2rem;
+            }
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .album-container {
+                padding: 40px 20px;
+            }
+
+            .lightbox-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+
+            .lightbox-nav.prev {
+                left: 10px;
+            }
+
+            .lightbox-nav.next {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Love Story</h1>
+            <p>One Year of Beautiful Memories</p>
+            <p style="font-size: 1.2rem; margin-top: 20px;">November 23, 2024 - November 23, 2025</p>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Album Container -->
+    <div class="album-container">
+        
+        <!-- Chapter 1: Where It All Began -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">Chapter 1: Where It All Began</h2>
+                <p class="chapter-date">August - September 2024</p>
+                <div class="chapter-description">
+                    <p>It all started at a Yankees game on August 23rd, 2024. I saw you for the first time, and little did I know that asking for a portable charger would change my life forever. From that first meeting to our unforgettable drive-in movie date, these are the moments where our story began.</p>
+                </div>
+            </div>
+            <div class="photo-gallery">
+                <div class="photo-item" data-type="image" data-src="photos/image-01.jpg">
+                    <img src="photos/image-01.jpg" alt="First time seeing you">
+                    <div class="photo-caption">
+                        <p>How you looked the first time I saw you, August 23rd 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-02.jpg">
+                    <img src="photos/image-02.jpg" alt="Drive-in movie date">
+                    <div class="photo-caption">
+                        <p>Drive-in movie date, September 20th 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: Falling for You -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">Chapter 2: Falling for You</h2>
+                <p class="chapter-date">November 2024</p>
+                <div class="chapter-description">
+                    <p>November was the month everything changed. From our first picture together to meeting your sister, celebrating your birthday, and the unforgettable night I asked you to be my girlfriend - every moment brought us closer. And when you said yes, my world became complete.</p>
+                </div>
+            </div>
+            <div class="photo-gallery">
+                <div class="photo-item" data-type="image" data-src="photos/image-03.jpg">
+                    <img src="photos/image-03.jpg" alt="First picture together">
+                    <div class="photo-caption">
+                        <p>Our first picture together - November 9th, 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-04.jpg">
+                    <img src="photos/image-04.jpg" alt="Meeting your sister">
+                    <div class="photo-caption">
+                        <p>First time I met your sister, Licey vs Aguilas game November 10th 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-05.jpg">
+                    <img src="photos/image-05.jpg" alt="Your birthday dinner">
+                    <div class="photo-caption">
+                        <p>Your birthday dinner at Chart House, November 18th 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-06.jpg">
+                    <img src="photos/image-06.jpg" alt="Your birthday cake">
+                    <div class="photo-caption">
+                        <p>Your birthday celebration, November 18th 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-07.jpg">
+                    <img src="photos/image-07.jpg" alt="Escape room">
+                    <div class="photo-caption">
+                        <p>Escape room date, November 22nd 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-08.jpg">
+                    <img src="photos/image-08.jpg" alt="The setup">
+                    <div class="photo-caption">
+                        <p>The moment I asked you to be my girlfriend, November 23rd 2024</p>
+                    </div>
+                </div>
+                <div class="photo-item" data-type="image" data-src="photos/image-09.jpg">
+                    <img src="photos/image-09.jpg" alt="She said yes!">
+                    <div class="photo-caption">
+                        <p>You said YES! November 23rd 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: Our Adventures Together -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">Chapter 3: Our Adventures Together</h2>
+                <p class="chapter-date">December 2024 - November 2025</p>
+                <div class="chapter-description">
+                    <p>From winter holidays to summer adventures, from baseball games to concerts, from hiking trails to tropical beaches - every season brought new memories. This is the story of us exploring life together, creating moments we'll cherish forever.</p>
+                </div>
+            </div>
+
+            <!-- Winter 2024-2025 -->
+            <div style="margin: 60px 0;">
+                <h3 style="text-align: center; font-size: 2rem; color: #c084fc; margin-bottom: 30px;">❄️ Winter 2024-2025</h3>
+                <div class="photo-gallery">
+                    <div class="photo-item" data-type="image" data-src="photos/image-10.jpg">
+                        <img src="photos/image-10.jpg" alt="Noche Buena">
+                        <div class="photo-caption">
+                            <p>Noche Buena party, December 21st 2024</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-11.jpg">
+                        <img src="photos/image-11.jpg" alt="Christmas Eve">
+                        <div class="photo-caption">
+                            <p>Christmas Eve, December 24th 2024</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-12.jpg">
+                        <img src="photos/image-12.jpg" alt="New Year">
+                        <div class="photo-caption">
+                            <p>New Year's celebration, January 1st 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="video" data-src="photos/video-01.mp4">
+                        <video src="photos/video-01.mp4" muted></video>
+                        <div class="video-indicator"></div>
+                        <div class="photo-caption">
+                            <p>Swingers mini golf date, January 3rd 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-13.jpg">
+                        <img src="photos/image-13.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Our first trip together - Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-14.jpg">
+                        <img src="photos/image-14.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-15.jpg">
+                        <img src="photos/image-15.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-16.jpg">
+                        <img src="photos/image-16.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-17.jpg">
+                        <img src="photos/image-17.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>In the mountains - Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-18.jpg">
+                        <img src="photos/image-18.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-19.jpg">
+                        <img src="photos/image-19.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Baseball game - Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-20.jpg">
+                        <img src="photos/image-20.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>At the beach - Dominican Republic, January 19th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-21.jpg">
+                        <img src="photos/image-21.jpg" alt="Valentine's Day">
+                        <div class="photo-caption">
+                            <p>Valentine's Day, February 14th 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Mets Conversion Attempt -->
+            <div class="mets-section">
+                <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">⚾ The Mets Conversion Attempt</h3>
+                <p style="text-align: center; font-style: italic; margin-bottom: 30px; opacity: 0.9;">She tried so hard to turn this Yankees fan into a Mets fan... but some things never change! 😂</p>
+                <div class="photo-gallery">
+                    <div class="photo-item" data-type="image" data-src="photos/image-22.jpg">
+                        <img src="photos/image-22.jpg" alt="Mets store">
+                        <div class="photo-caption">
+                            <p>At the Mets store... still a Yankees fan though!</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-23.jpg">
+                        <img src="photos/image-23.jpg" alt="Mets game">
+                        <div class="photo-caption">
+                            <p>She got me to a Mets game... conversion attempt in progress!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spring 2025 -->
+            <div style="margin: 60px 0;">
+                <h3 style="text-align: center; font-size: 2rem; color: #86efac; margin-bottom: 30px;">🌸 Spring 2025</h3>
+                <div class="photo-gallery">
+                    <div class="photo-item" data-type="image" data-src="photos/image-24.jpg">
+                        <img src="photos/image-24.jpg" alt="Yankees game">
+                        <div class="photo-caption">
+                            <p>Yankees game on the field! May 2nd 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="video" data-src="photos/video-02.mp4">
+                        <video src="photos/video-02.mp4" muted></video>
+                        <div class="video-indicator"></div>
+                        <div class="photo-caption">
+                            <p>Yankees game, May 2nd 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-25.jpg">
+                        <img src="photos/image-25.jpg" alt="Chrisalis birthday">
+                        <div class="photo-caption">
+                            <p>Chrisalis' birthday, May 9th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-26.jpg">
+                        <img src="photos/image-26.jpg" alt="Subway Series">
+                        <div class="photo-caption">
+                            <p>Our first Subway Series - Yankees vs Mets, May 18th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-27.jpg">
+                        <img src="photos/image-27.jpg" alt="First hike">
+                        <div class="photo-caption">
+                            <p>Our first hike together, May 26th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-28.jpg">
+                        <img src="photos/image-28.jpg" alt="First hike">
+                        <div class="photo-caption">
+                            <p>Our first hike together, May 26th 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summer 2025 -->
+            <div style="margin: 60px 0;">
+                <h3 style="text-align: center; font-size: 2rem; color: #fbbf24; margin-bottom: 30px;">☀️ Summer 2025</h3>
+                <div class="photo-gallery">
+                    <div class="photo-item" data-type="video" data-src="photos/video-03.mp4">
+                        <video src="photos/video-03.mp4" muted></video>
+                        <div class="video-indicator"></div>
+                        <div class="photo-caption">
+                            <p>Pittsburgh Pirates fireworks night, June 20th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-29.jpg">
+                        <img src="photos/image-29.jpg" alt="July 4th">
+                        <div class="photo-caption">
+                            <p>Our first July 4th together, 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-30.jpg">
+                        <img src="photos/image-30.jpg" alt="Second Subway Series">
+                        <div class="photo-caption">
+                            <p>Second Subway Series, July 6th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-31.jpg">
+                        <img src="photos/image-31.jpg" alt="Squid Game date">
+                        <div class="photo-caption">
+                            <p>Squid Game date, July 26th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-32.jpg">
+                        <img src="photos/image-32.jpg" alt="Squid Game date">
+                        <div class="photo-caption">
+                            <p>Squid Game date, July 26th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-33.jpg">
+                        <img src="photos/image-33.jpg" alt="Squid Game date">
+                        <div class="photo-caption">
+                            <p>Squid Game date, July 26th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-34.jpg">
+                        <img src="photos/image-34.jpg" alt="Puerto Rico">
+                        <div class="photo-caption">
+                            <p>Puerto Rico for Bad Bunny concert, August 23rd 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-35.jpg">
+                        <img src="photos/image-35.jpg" alt="Puerto Rico">
+                        <div class="photo-caption">
+                            <p>Puerto Rico for Bad Bunny concert, August 23rd 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-36.jpg">
+                        <img src="photos/image-36.jpg" alt="Puerto Rico">
+                        <div class="photo-caption">
+                            <p>Puerto Rico for Bad Bunny concert, August 23rd 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-37.jpg">
+                        <img src="photos/image-37.jpg" alt="Puerto Rico">
+                        <div class="photo-caption">
+                            <p>At the Bad Bunny concert, Puerto Rico, August 23rd 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fall 2025 -->
+            <div style="margin: 60px 0;">
+                <h3 style="text-align: center; font-size: 2rem; color: #fb923c; margin-bottom: 30px;">🍂 Fall 2025</h3>
+                <div class="photo-gallery">
+                    <div class="photo-item" data-type="image" data-src="photos/image-38.jpg">
+                        <img src="photos/image-38.jpg" alt="US Open">
+                        <div class="photo-caption">
+                            <p>US Open, September 5th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-39.jpg">
+                        <img src="photos/image-39.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic trip, October 4th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-40.jpg">
+                        <img src="photos/image-40.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic trip, October 4th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-41.jpg">
+                        <img src="photos/image-41.jpg" alt="Dominican Republic">
+                        <div class="photo-caption">
+                            <p>Dominican Republic trip, October 4th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-42.jpg">
+                        <img src="photos/image-42.jpg" alt="Farm day">
+                        <div class="photo-caption">
+                            <p>Farm day, October 11th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-43.jpg">
+                        <img src="photos/image-43.jpg" alt="Farm day">
+                        <div class="photo-caption">
+                            <p>Farm day at night, October 11th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-44.jpg">
+                        <img src="photos/image-44.jpg" alt="My birthday">
+                        <div class="photo-caption">
+                            <p>My birthday celebration, October 20th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-45.jpg">
+                        <img src="photos/image-45.jpg" alt="My birthday">
+                        <div class="photo-caption">
+                            <p>Heart-shaped pizza for my birthday, October 20th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-46.jpg">
+                        <img src="photos/image-46.jpg" alt="My birthday">
+                        <div class="photo-caption">
+                            <p>My birthday dinner, October 20th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-47.jpg">
+                        <img src="photos/image-47.jpg" alt="Your birthday">
+                        <div class="photo-caption">
+                            <p>Your birthday, November 18th 2025</p>
+                        </div>
+                    </div>
+                    <div class="photo-item" data-type="image" data-src="photos/image-48.jpg">
+                        <img src="photos/image-48.jpg" alt="Your birthday">
+                        <div class="photo-caption">
+                            <p>Your birthday at ROMO, November 18th 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 4: A Letter to You -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <h2 class="chapter-title">A Letter to You</h2>
+                <p class="chapter-date">From My Heart to Yours</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 60px 40px;">
+                <p style="font-size: 1.2rem; line-height: 2; text-align: left; margin-bottom: 30px;">My Love,</p>
+                
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    As I sit here thinking about this past year, my heart is overwhelmed with gratitude and joy. One year ago, I asked you to be my girlfriend, and you said yes. That moment changed my life forever.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    From the first time I saw you at that Yankees game, asking for a portable charger, I knew there was something special about you. Your smile, your laugh, the way your eyes light up when you're excited about something - I was captivated from the start.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    This year has been filled with so many incredible moments. We've traveled together, explored new places, tried new things, and created memories I'll cherish forever. Whether we were hiking in the mountains, dancing at concerts, cheering at baseball games, or just sitting on the couch watching movies, every moment with you has been a gift.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    You've taught me what it means to truly love someone - to support them, to laugh with them, to dream with them. You've shown me patience when I needed it, celebrated my successes, and stood by me through challenges. You make me want to be a better person every single day.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    I love your adventurous spirit, how you're always up for trying something new. I love your kindness and the way you care for the people in your life. I love your determination and how you chase your dreams. I love your sense of humor and how you can make me laugh even on the hardest days.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    Thank you for being my partner, my best friend, my confidant, and my love. Thank you for choosing me every day, for believing in us, and for building this beautiful life together.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    As we celebrate one year together, I want you to know that this is just the beginning. I can't wait for all the adventures still to come, all the memories we'll create, all the dreams we'll chase together. With you by my side, I know anything is possible.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 2; text-align: left; margin-bottom: 30px;">
+                    I love you more than words could ever express. Here's to us, to our love, and to forever.
+                </p>
+
+                <p style="font-size: 1.2rem; line-height: 2; text-align: left; margin-top: 50px;">
+                    Forever yours,<br>
+                    Jose ❤️
+                </p>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="chapter" style="text-align: center; margin-top: 100px;">
+            <div class="chapter-header">
+                <h2 class="chapter-title">To Many More Adventures</h2>
+                <p style="font-size: 1.5rem; margin-top: 40px; color: #ff6b9d;">Happy One Year Anniversary, My Love</p>
+                <p style="font-size: 1.2rem; margin-top: 20px; opacity: 0.8;">November 23rd, 2025</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="closeLightbox">×</span>
+            <span class="lightbox-nav prev" id="prevPhoto">‹</span>
+            <span class="lightbox-nav next" id="nextPhoto">›</span>
+            <img id="lightboxImg" src="" alt="" style="display:none;">
+            <video id="lightboxVideo" controls style="display:none;"></video>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxVideo = document.getElementById('lightboxVideo');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevPhoto = document.getElementById('prevPhoto');
+        const nextPhoto = document.getElementById('nextPhoto');
+
+        let currentIndex = 0;
+        let photoItems = [];
+
+        // Get all photo items
+        function initLightbox() {
+            photoItems = Array.from(document.querySelectorAll('.photo-item'));
+            
+            photoItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentIndex = index;
+                    showLightbox();
+                });
+            });
+        }
+
+        function showLightbox() {
+            const item = photoItems[currentIndex];
+            const type = item.getAttribute('data-type');
+            const src = item.getAttribute('data-src');
+            const caption = item.querySelector('.photo-caption p')?.textContent || '';
+
+            lightbox.classList.add('active');
+            lightboxCaption.textContent = caption;
+
+            if (type === 'video') {
+                lightboxImg.style.display = 'none';
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.src = src;
+                lightboxVideo.play();
+            } else {
+                lightboxVideo.style.display = 'none';
+                lightboxImg.style.display = 'block';
+                lightboxImg.src = src;
+            }
+        }
+
+        function hideLightbox() {
+            lightbox.classList.remove('active');
+            lightboxVideo.pause();
+            lightboxVideo.src = '';
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % photoItems.length;
+            showLightbox();
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + photoItems.length) % photoItems.length;
+            showLightbox();
+        }
+
+        // Event listeners
+        closeLightbox.addEventListener('click', hideLightbox);
+        nextPhoto.addEventListener('click', showNext);
+        prevPhoto.addEventListener('click', showPrev);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                hideLightbox();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') hideLightbox();
+            if (e.key === 'ArrowRight') showNext();
+            if (e.key === 'ArrowLeft') showPrev();
+        });
+
+        // Video hover play
+        document.querySelectorAll('.photo-item[data-type="video"] video').forEach(video => {
+            video.parentElement.addEventListener('mouseenter', () => {
+                video.play();
+            });
+            video.parentElement.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // Initialize
+        createParticles();
+        initLightbox();
+    </script>
+</body>
+</html>
